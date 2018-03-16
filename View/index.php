@@ -1,12 +1,23 @@
 <?php
 
-require '../pokemon/pokemon.php';
+define("ROOT", dirname(__DIR__) . DIRECTORY_SEPARATOR);
+require ROOT . 'Pokemon/Pikachu.php';
+require ROOT . 'Pokemon/Charmeleon.php';
 
+use Pokemon\Pikachu;
+use Pokemon\Charmeleon;
 
-$pikachu = new Pokemon("JaCk", "Electric", "60", "Fire", "Figthing", "Electric Ring", "50", "Pika Punch", "20");
+/**
+ * Description of index
+ *
+ * @author Peter Verhaar
+ */
 
-$charmeleon = new Pokemon("Embers", "Fire", "60", "Water", "Electric", "Flare", "30", "Headbutt", "10");
+$pikachu = new Pikachu("JaCk");
 
+$charmeleon = new Charmeleon("Embers");
 
-echo $pikachu;
-echo $charmeleon;
+echo"<pre>";
+print_r($pikachu);
+print_r($charmeleon);
+
