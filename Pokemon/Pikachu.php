@@ -1,7 +1,7 @@
 <?php
 
 namespace Pokemon;
-
+//require ROOT . 'Pokemon/PokemonData.php';
 use Pokemon\PokemonData;
 
 /**

@@ -1,6 +1,7 @@
 <?php
 
 define("ROOT", dirname(__DIR__) . DIRECTORY_SEPARATOR);
+require ROOT . 'Pokemon/PokemonData.php';
 require ROOT . 'Pokemon/Pikachu.php';
 require ROOT . 'Pokemon/Charmeleon.php';
 
