@@ -1,8 +1,12 @@
 <?php
 
 namespace Pokemon;
-//require ROOT . 'Pokemon/PokemonData.php';
+
 use Pokemon\PokemonData;
+use Pokemon\Types\EnergyType;
+use Pokemon\Types\Weakness;
+use Pokemon\Types\Resistance;
+use Pokemon\Moves\MoveSetter;
 
 /**
  * Description of Charmeleon
@@ -13,12 +17,11 @@ class Charmeleon extends PokemonData {
 
 	public function __construct($name) {
 		$this->name = $name;
-		$this->type = "Fire";
+		$this->type = new EnergyType("Fire");
 		$this->hitpoints = 60;
-		$this->weakness = "Water";
-		$this->resistance = "Electric";
-		$this->moves = ["Flare", "Headbutt", null, null];
-		$this->movesdmg = [30, 50, null, null];
+		$this->weakness = new Weakness("Water");
+		$this->resistance = new Resistance("Electric");
+		$this->moves = new MoveSetter("Flare", 30, "Headbutt", 50);
 	}
 
 }
