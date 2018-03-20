@@ -11,6 +11,7 @@ require ROOT . 'Pokemon/Charmeleon.php';
 
 use Pokemon\Pikachu;
 use Pokemon\Charmeleon;
+use Pokemon\PokemonData;
 
 /**
  * Description of index
@@ -26,3 +27,6 @@ echo"<pre>";
 print_r($pikachu);
 print_r($charmeleon);
 
+
+
+$attack1 = PokemonData::attack($pikachu, $pikachu->moves[0], $charmeleon);

@@ -16,4 +16,14 @@ class Attack {
 		$this->_name = $name;
 		$this->_damage = $damage;
 	}
+	
+	public function getName() {
+		return $this->_name;
+	}
+
+	public function getDamage() {
+		return $this->_damage;
+	}
+
+
 }

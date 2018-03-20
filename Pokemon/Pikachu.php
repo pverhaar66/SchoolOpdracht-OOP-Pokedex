@@ -2,8 +2,6 @@
 
 namespace Pokemon;
 
-
-
 use Pokemon\PokemonData;
 use Pokemon\Types\EnergyType;
 use Pokemon\Types\Weakness;

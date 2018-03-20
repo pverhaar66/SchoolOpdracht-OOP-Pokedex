@@ -17,4 +17,12 @@ class Weakness {
 		$this->_weaknessMultiplier = $weaknessMultiplier;
 	}
 
+	public function getEnergyType() {
+		return $this->_energyType;
+	}
+
+	public function getWeaknessMultiplier() {
+		return $this->_weaknessMultiplier;
+	}
+
 }
