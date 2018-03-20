@@ -6,7 +6,7 @@ use Pokemon\PokemonData;
 use Pokemon\Types\EnergyType;
 use Pokemon\Types\Weakness;
 use Pokemon\Types\Resistance;
-use Pokemon\Moves\MoveSetter;
+use Pokemon\Moves\Attack;
 
 /**
  * Description of Charmeleon
@@ -19,9 +19,9 @@ class Charmeleon extends PokemonData {
 		$this->name = $name;
 		$this->type = new EnergyType("Fire");
 		$this->hitpoints = 60;
-		$this->weakness = new Weakness("Water");
-		$this->resistance = new Resistance("Electric");
-		$this->moves = new MoveSetter("Flare", 30, "Headbutt", 50);
+		$this->weakness = new Weakness(new EnergyType("water"), 2);
+		$this->resistance = new Resistance(new EnergyType("Electric"), 10);
+		$this->moves = [new Attack("Flare", 30), new Attack("headbutt", 10)];
 	}
 
 }

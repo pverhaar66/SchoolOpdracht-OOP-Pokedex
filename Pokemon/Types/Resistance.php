@@ -9,10 +9,12 @@ namespace Pokemon\Types;
  */
 class Resistance {
 
-	private $_name;
+	private $_energyType;
+	private $_resistvalue;
 
-	public function __construct($name) {
-		$this->_name = $name;
+	public function __construct($energyType, $resistvalue) {
+		$this->_energyType = $energyType;
+		$this->_resistvalue = $resistvalue;
 	}
 
 }

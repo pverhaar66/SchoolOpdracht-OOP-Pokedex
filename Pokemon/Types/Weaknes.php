@@ -9,10 +9,12 @@ namespace Pokemon\Types;
  */
 class Weakness {
 
-	private $_name;
+	private $_energyType;
+	private $_weaknessMultiplier;
 
-	public function __construct($name) {
-		$this->_name = $name;
+	public function __construct($energyType, $weaknessMultiplier) {
+		$this->_energyType = $energyType;
+		$this->_weaknessMultiplier = $weaknessMultiplier;
 	}
 
 }
