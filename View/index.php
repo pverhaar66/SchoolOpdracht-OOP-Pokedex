@@ -18,15 +18,12 @@ use Pokemon\PokemonData;
  *
  * @author Peter Verhaar
  */
-
 $pikachu = new Pikachu("JaCk");
 
 $charmeleon = new Charmeleon("Embers");
 
 echo"<pre>";
-print_r($pikachu);
-print_r($charmeleon);
 
-
-
-$attack1 = PokemonData::attack($pikachu, $pikachu->moves[0], $charmeleon);
+$pikachu->attack($pikachu->moves[1], $charmeleon);
+echo"\n";
+$charmeleon->attack($charmeleon->moves[0], $pikachu);

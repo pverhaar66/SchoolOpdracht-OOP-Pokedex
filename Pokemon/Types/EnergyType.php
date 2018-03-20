@@ -9,10 +9,18 @@ namespace Pokemon\Types;
  */
 class EnergyType {
 
-	private $_name;
+	private $_energyType;
 
-	public function __construct($name) {
-		$this->_name = $name;
+	public function __construct($energyType) {
+		$this->_energyType = $energyType;
+	}
+
+	public function getEnergyType() {
+		return $this->_energyType;
+	}
+
+	public function setEnergyType($energyType) {
+		$this->_energyType = $energyType;
 	}
 
 }

@@ -20,27 +20,37 @@ class PokemonData {
 	}
 
 	public function weaknessChecker($pokemon, $target) {
-		if ($pokemon->type == $target->getEnergyType()) {
+		if ($pokemon->type->getEnergyType() === $target->weakness->getEnergyType()->getEnergyType()) {
 			return true;
 		}
 		return false;
 	}
 
 	public function resistanceChecker($pokemon, $target) {
-		if ($pokemon->type == $target->getEnergyType()) {
+		if ($pokemon->type->getEnergyType() === $target->weakness->getEnergyType()->getEnergyType()) {
 			return true;
 		}
 		return false;
 	}
 
-//	public function attack($pokemon, $attack, $target) {
-//		print_r($pokemon);
-//		print_r($attack);
-//		print_r($target);
-//		if ($this->weaknessChecker($pokemon, $target)) {
-//			$attack->getDamage() - 
-//			print_r($pokemon."attacks". $taget . "with" . $attack->getName(). $target . "loses" . $attack->getDamage() . "HP");
-//		}
-//	}
+	public function attack($attack, $target) {
+		print($this->name . " current HP = " . $this->hitpoints . "\n");
+		if ($this->weaknessChecker($this, $target) == true) {
+			$dmg = $attack->getDamage() * $target->weakness->getWeaknessMultiplier();
+			$result = $target->hitpoints - $dmg;
+			print_r($this->name . " attacks " . $target->name . " with " . $attack->getName() . " " . $target->name . " loses " . $dmg . " HP");
+			return print("\n" . "$target->name new HP = " . $result);
+		}
+		if ($this->resistanceChecker($this, $target) == true) {
+			$dmg = $attack->getDamage() - $target->getResistvalue();
+			$result = $target->hitpoints - $dmg;
+			print_r($this->name . " attacks " . $target->name . " with " . $attack->getName() . " " . $target->name . " loses " . $dmg . " HP");
+			return print("\n" . "$target->name new HP = " . $result);
+		}
+		$dmg = $attack->getDamage();
+		$result = $target->hitpoints - $dmg;
+		print_r($this->name . " attacks " . $target->name . " with " . $attack->getName() . " " . $target->name . " loses " . $dmg . " HP");
+		return print("\n" . "$target->name new HP = " . $result);
+	}
 
 }
