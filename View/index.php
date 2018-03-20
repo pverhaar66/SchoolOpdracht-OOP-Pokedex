@@ -11,7 +11,6 @@ require ROOT . 'Pokemon/Charmeleon.php';
 
 use Pokemon\Pikachu;
 use Pokemon\Charmeleon;
-use Pokemon\PokemonData;
 
 /**
  * Description of index
@@ -24,6 +23,9 @@ $charmeleon = new Charmeleon("Embers");
 
 echo"<pre>";
 
+/**
+ * initiates the attack and gives the attack and target as parameter
+ */
 $pikachu->attack($pikachu->moves[1], $charmeleon);
 echo"\n";
 $charmeleon->attack($charmeleon->moves[0], $pikachu);
