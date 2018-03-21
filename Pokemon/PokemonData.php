@@ -54,7 +54,7 @@ class PokemonData {
 	 * @return type string
 	 */
 	public function attack($attack, $target) {
-		print($this->name . " current HP = " . $this->hitpoints . "\n");
+		print($target->name . " current HP = " . $this->hitpoints . "\n");
 		if ($this->weaknessChecker($this, $target) == true) {
 			$dmg = $attack->getDamage() * $target->weakness->getWeaknessMultiplier();
 			$result = $target->hitpoints - $dmg;
